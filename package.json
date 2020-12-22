@@ -1,6 +1,6 @@
 {
   "name": "appstore-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An unofficial client to interact with https://api.appstoreconnect.apple.com/v1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,7 +33,11 @@
       "pre-commit": "lint-staged"
     }
   },
-  "author": "",
+  "author": "crypt08uff3r<qwertyhqwerty475@gmail.com> (https://github.com/cryptobuffer)",
+  "contributors": [
+    "crypt08uff3r<qwertyhqwerty475@gmail.com> (https://github.com/cryptobuffer)"
+  ],
+  "homepage": "https://github.com/cryptobuffer/appstore-api",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.0",
