@@ -49,8 +49,11 @@ result = await api.disable('<bundle_id>_MAPS');
 
 ```js
 let api = client.api('certificates') as CertificatesAPI;
+let csrContent = fs.readFileSync(path.resolve(__dirname, '../../tmp/ios.certSigningRequest'), 'utf-8');
 let list = await api.list();
-let cert = await api.get('<cert_id>')
+let cert = await api.get('<cert_id>');
+let createdCert = await api.create('IOS_DISTRIBUTION',csrContent);
+let result = await api.delete('<cert_id>');
 ```
 
 ### Devices API
