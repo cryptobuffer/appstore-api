@@ -27,8 +27,12 @@ export class Client {
     this.config = config;
   }
 
+  public api(name: 'device'): DeviceAPI;
+  public api(name: 'bundleId'): BundleIdAPI;
+  public api(name: 'bundleIdCapabilities'): BundleIdCapabilityAPI;
+  public api(name: 'profiles'): ProfilesAPI;
+  public api(name: 'certificates'): CertificatesAPI;
   public api(name: APINAME): BaseAPI {
-    let api: BaseAPI;
     switch (name) {
       case 'device':
         return new DeviceAPI(this);

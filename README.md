@@ -28,7 +28,7 @@ let client = new Client({
 ### BundleId API
 
 ```js
-let api = client.api('bundleId') as BundleIdAPI;
+let api = client.api('bundleId');
 
 let bundles = await api.list();
 let bundleUniqueId = '<bundle_id>';
@@ -42,7 +42,7 @@ let deleteResult = await api.delete(bundleUniqueId);
 ### BundleId Capabilities API
 
 ```js
-let api = client.api('bundleIdCapabilities') as BundleIdCapabilityAPI;
+let api = client.api('bundleIdCapabilities');
 let result = await api.enable('<bundle_id>', 'MAPS');
 result = await api.disable('<bundle_id>_MAPS');
 ```
@@ -50,33 +50,33 @@ result = await api.disable('<bundle_id>_MAPS');
 ### Certificates API
 
 ```js
-let api = client.api('certificates') as CertificatesAPI;
+let api = client.api('certificates');
 let csrContent = fs.readFileSync(path.resolve(__dirname, '../../tmp/ios.certSigningRequest'), 'utf-8');
 let list = await api.list();
 let cert = await api.get('<cert_id>');
-let createdCert = await api.create('IOS_DISTRIBUTION',csrContent);
+let createdCert = await api.create('IOS_DISTRIBUTION', csrContent);
 let result = await api.delete('<cert_id>');
 ```
 
 ### Devices API
 
 ```js
-let api = client.api('device') as DeviceAPI;
+let api = client.api('device');
 let list = await api.list();
 let device = await api.get('<device_id>');
-let createResult = await api.create('<device_name>','<udid>')
+let createResult = await api.create('<device_name>', '<udid>');
 ```
 
 ### Profiles API
 
 ```js
-let api = client.api('profiles') as ProfilesAPI;
+let api = client.api('profiles');
 let profileId = '<profile_id>';
 let list = await api.list();
 let profile = await api.get(profileId);
-let createResult = await api.create("<profile_name>",'<bundle_id>','<profile_type>',['<device_id_1>','<device_id_2>'],['<cert_id_1>','<cert_id_2>']);
-let devices =  await api.devices(profileId);
-let certificates =  await api.certificates(profileId);
+let createResult = await api.create('<profile_name>', '<bundle_id>', '<profile_type>', ['<device_id_1>', '<device_id_2>'], ['<cert_id_1>', '<cert_id_2>']);
+let devices = await api.devices(profileId);
+let certificates = await api.certificates(profileId);
 ```
 
 ## References

@@ -1,8 +1,7 @@
-import ProfilesAPI from '../../src/apis/ProfilesAPI';
 import client from '../client';
 
 const run = async () => {
-  let api = client.api('profiles') as ProfilesAPI;
+  let api = client.api('profiles');
   try {
     let result = await api.list();
     console.log(JSON.stringify(result, null, '  '));

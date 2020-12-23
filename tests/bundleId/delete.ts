@@ -1,8 +1,7 @@
-import BundleIdAPI from '../../src/apis/BundleIdAPI';
 import client from '../client';
 
 const run = async () => {
-  let api = client.api('bundleId') as BundleIdAPI;
+  let api = client.api('bundleId');
   try {
     let result = await api.delete('<bundle_id>');
     console.log(JSON.stringify(result, null, '  '));
