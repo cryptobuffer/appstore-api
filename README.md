@@ -2,6 +2,8 @@
 
 An unofficial client to interact with https://api.appstoreconnect.apple.com/v1
 
+[Official Docs](https://developer.apple.com/documentation/appstoreconnectapi)
+
 ## Install
 
 ```js
